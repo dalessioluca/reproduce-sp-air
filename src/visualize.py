@@ -95,7 +95,8 @@ def draw_rectangles_with_overlap(draw, corners, z_pres):
     lines_drawn = []
     # rectangles come in in fg to bg order
     for i in range(n):
-        color = tuple(map(lambda c: int(c * z_pres[i]), colors(i)))
+        # color = tuple(map(lambda c: int(c * z_pres[i]), colors(i)))
+        color = "red"
         for j in range(4):
             line = [corners[i][j], corners[i][(j + 1) % 4]]
             line.sort(key=lambda p: p[0] + p[1])
@@ -263,12 +264,12 @@ def test_vis():
     z_pres = [1.0, 1.0, 1.0]
     window_size = 28
     v = draw_image(img, z_where, z_pres, window_size)
-    vis.image(v)
-    h = np.zeros((50, 50))
-    h[:20, :20] = 1.0
-    v = draw_overlay(img, hidden=h)
-    vis.image(v)
-
+    #vis.image(v)
+    #h = np.zeros((50, 50))
+    #h[:20, :20] = 1.0
+    #v = draw_overlay(img, hidden=h)
+    #vis.image(v)
+    return np.moveaxis(v, 0, -1)
 
 if __name__ == '__main__':
     test_vis()
