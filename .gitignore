@@ -2,3 +2,5 @@
 *.pyc
 src/check*
 src/EXTRAPOLATION*
+src/OLD*
+src/REPRODUC*
